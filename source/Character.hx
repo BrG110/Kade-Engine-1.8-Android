@@ -95,8 +95,24 @@ class Character extends FlxSprite
 
 				loadOffsetFile(curCharacter);
 				barColor = 0xFFaf66ce;
+				playAnim('idle');
+				
+				case 'disbamb':
+				// DAD ANIMATION LOADING CODE
+				tex = Paths.getSparrowAtlas('bambi_pissyboy', 'shared', true);
+				frames = tex;
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByIndices('idleLoop', "idle", [11, 12], "", 12, true);
+
+				loadOffsetFile(curCharacter);
+				barColor = 0xFFaf66ce;
 
 				playAnim('idle');
+				
 			case 'spooky':
 				tex = Paths.getSparrowAtlas('spooky_kids_assets', 'shared', true);
 				frames = tex;
